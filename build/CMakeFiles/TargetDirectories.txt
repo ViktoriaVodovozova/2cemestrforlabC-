@@ -1,0 +1,3 @@
+/Users/yowlxc/itmo/cpp/lab1/build/CMakeFiles/point_generation.dir
+/Users/yowlxc/itmo/cpp/lab1/build/CMakeFiles/edit_cache.dir
+/Users/yowlxc/itmo/cpp/lab1/build/CMakeFiles/rebuild_cache.dir

@@ -22,6 +22,7 @@ public:
 
     Matrix toMatrix() const;         // Все координаты в матрицу Nx2
     Matrix labelsToMatrix() const;   // Все метки в матрицу Nx1
+
 };
 
 #endif // DATASET_H

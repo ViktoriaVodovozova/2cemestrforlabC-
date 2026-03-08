@@ -1,13 +1,20 @@
-cmake_minimum_required(VERSION 4.0)
-project(Lab1_)
+cmake_minimum_required(VERSION 3.10)
+project(PointGeneration)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Lab1_
-        main.cpp
-        my_part_classes/Matrix.cpp
-        my_part_classes/Point.cpp
-        my_part_classes/Dataset.cpp
+# Указываем путь к vcpkg (если ещё не настроен глобально)
+set(CMAKE_PREFIX_PATH "/Users/yowlxc/itmo/cpp/vcpkg/installed/arm64-osx" ${CMAKE_PREFIX_PATH})
+
+# Находим библиотеку
+find_package(nlohmann_json CONFIG REQUIRED)
+
+add_executable(point_generation
+    point_generation.cpp
+    classes/Point.cpp
+    classes/Matrix.cpp
+    classes/Dataset.cpp
 )
 
-target_include_directories(Lab1_ PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/my_part_classes)
+# Линкуем библиотеку
+target_link_libraries(point_generation PRIVATE nlohmann_json::nlohmann_json)
