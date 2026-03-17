@@ -1,23 +1,22 @@
 #include "Dataset.h"
 #include <iostream>
 
-
 Dataset::Dataset() {
-    // Пустой набор данных
+    // пустой набор данных
 }
 
 void Dataset::addPoint(const Point& point) {
-    // Добавляем точку в конец списка
+    // добавляем точку в конец списка
     points.push_back(point);
 }
 
 void Dataset::addPoint(double x, double y, int label) {
-    // Создаём точку и добавляем в список
+    // создаём точку и добавляем в список
     points.push_back(Point(x, y, label));
 }
 
 Point Dataset::getPoint(int index) const {
-    // Проверка на выход за границы
+    // проверка на выход за границы
     if (index < 0 || index >= points.size()) {
         std::cerr << "Ошибка: индекс точки вне диапазона!" << std::endl;
         return Point();
@@ -26,18 +25,18 @@ Point Dataset::getPoint(int index) const {
 }
 
 int Dataset::size() const {
-    // Возвращаем количество точек
+    // возвращаем количество точек
     return points.size();
 }
 
 void Dataset::clear() {
-    // Очищаем все точки
+    // очищаем все точки
     points.clear();
 }
 
 
 Matrix Dataset::toMatrix() const {
-    // Создаём матрицу: строки = количество точек, столбцы = 2 (x и y)
+    // создаём матрицу: строки = количество точек, столбцы = 2 (x и y)
     Matrix result(points.size(), 2);
     
     for (int i = 0; i < points.size(); i++) {
@@ -49,11 +48,11 @@ Matrix Dataset::toMatrix() const {
 }
 
 Matrix Dataset::labelsToMatrix() const {
-    // Создаём матрицу: строки = количество точек, столбцы = 1 (label)
+    // создаём матрицу: строки = количество точек, столбцы = 1 (label)
     Matrix result(points.size(), 1);
     
     for (int i = 0; i < points.size(); i++) {
-        result.set(i, 0, points[i].label);  // Столбец 0 = label
+        result.set(i, 0, points[i].label);  // столбец 0 = label
     }
     
     return result;

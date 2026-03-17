@@ -2,6 +2,7 @@
 #include <fstream>
 #include <cmath>
 #include <ctime>
+#include <random>
 #include <nlohmann/json.hpp>
 
 #include "classes/Dataset.h"
@@ -10,51 +11,65 @@
 
 using json = nlohmann::json;
 
+static std::random_device rd;
+static std::mt19937 gen(rd());
+static std::uniform_real_distribution<double> dist(0.0, 1.0);
+
 double randomDouble(double min, double max) {
-    return min + (max - min) * (rand() / (double)RAND_MAX);
+    return min + (max - min) * (dist(gen));
 }
 
-Dataset get_points (int first_cl_size, int second_cl_size) {
-    srand(time(nullptr));
+Dataset get_points (int first_cl_size, int second_cl_size, float k, float b) {
     
-    // Создаем объект Dataset для хранения всех точек
+    // создаем объект Dataset для хранения всех точек
     Dataset dataset;
 
     // center1 и center2 - центры кластеров 1 и 2
     Point center1, center2;
 
     // задаем центры кластеров в диапазоне от -10 000 до 10 000
-    center1.x = randomDouble(100.0, 200.0);
-    center1.y = randomDouble(100.0, 200.0);
+    center1.x = randomDouble(-200.0, 200.0);
+    center1.y = randomDouble(-200.0, 200.0);
     center1.label = 0;
-    center2.x = randomDouble(100.0, 200.0);
-    center2.y = randomDouble(100.0, 200.0);
+
+    // для центра второго кластера используются формулы для нахождения точки, симметричной данной отн-но заданной прямой.
+    center2.x = center1.x - 2*k*(k*center1.x - center1.y + b) / (k*k + 1);
+    center2.y = center1.y + 2*(k*center1.x - center1.y + b) / (k*k + 1);
     center2.label = 1;
 
-    float rad = sqrt(pow((center1.x - center2.x), 2) + pow((center1.y - center2.y), 2)) * 0.5 * 0.3;
+    double radius = sqrt(pow((center1.x - center2.x), 2) + pow((center1.y - center2.y), 2)) * 0.5 * 0.8;
 
-    // Генерация точек
-    // Первый кластер
+    // генерация точек
+
+    // первый кластер
     for(int i = 0; i < first_cl_size; ++i){
         Point current;
 
-        current.x = rand() % (int)(2*rad) + (center1.x - rad);
-        current.y = rand() % (int)(2*rad) + (center1.y - rad);
+        // генерируем случайный угол и случайное расстояние
+        double angle = 2 * M_PI * dist(gen);
+        // sqrt(dist(gen)) для равномерного распределения по площади
+        double r = radius * sqrt(dist(gen));
+
+        current.x = center1.x + r * cos(angle);
+        current.y = center1.y + r * sin(angle);
         current.label = 0;
 
-        // Добавляем точку в Dataset
+        // добавляем точку в Dataset
         dataset.addPoint(current);
     }
 
-    // Второй кластер
+    // второй кластер
     for(int i = 0; i < second_cl_size; ++i){
         Point current;
 
-        current.x = rand() % (int)(2*rad) + (center2.x - rad);
-        current.y = rand() % (int)(2*rad) + (center2.y - rad);
+        double angle = 2 * M_PI * dist(gen);
+        double r = radius * sqrt(dist(gen));
+
+        current.x = center2.x + r * cos(angle);
+        current.y = center2.y + r * sin(angle);
         current.label = 1;
 
-        // Добавляем точку в Dataset
+        // добавляем точку в Dataset
         dataset.addPoint(current);
     }
     return dataset;
@@ -66,12 +81,19 @@ int main() {
     int first_cl_size, second_cl_size;
     std::cin >> first_cl_size >> second_cl_size;
 
-    Dataset data = get_points(first_cl_size, second_cl_size);
+    std::cout << "Относительно какой прямой будут строиться кластеры? Последовательно введите с клавиатуры коэфициенты k и b для прямой y = kx + b:";
+    double k, b;
+    std::cin >> k >> b;
 
-    // Выводим информацию о созданном датасете
-    std::cout << "Создан датасет с " << data.size() << " точками" << std::endl;
+    Dataset data = get_points(first_cl_size, second_cl_size, k, b);
 
-    // Запись в JSON из Dataset
+    // выводим информацию о созданном датасете
+    std::cout << "Создан датасет с " << data.size() << " точками относительно прямой y = ";
+    if (k == 1) std:: cout << "x + ";
+        else if (k != 0) std:: cout << k << "x + ";
+    std::cout << b << std::endl;
+
+    // запись в JSON из Dataset
     std::ofstream fout("points.json");
 
     fout << "{\n";
@@ -92,8 +114,6 @@ int main() {
     fout.close();
     
     std::cout << "Точки успешно сохранены в points.json" << std::endl;
-    system("python3 ../visualization.py");
-    std::cout << 'a';
 
     return 0;
 }
