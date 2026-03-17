@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/yowlxc/itmo/cpp/lab1/classes/Dataset.cpp" "CMakeFiles/point_generation.dir/classes/Dataset.cpp.o" "gcc" "CMakeFiles/point_generation.dir/classes/Dataset.cpp.o.d"
-  "/Users/yowlxc/itmo/cpp/lab1/classes/Matrix.cpp" "CMakeFiles/point_generation.dir/classes/Matrix.cpp.o" "gcc" "CMakeFiles/point_generation.dir/classes/Matrix.cpp.o.d"
-  "/Users/yowlxc/itmo/cpp/lab1/classes/Point.cpp" "CMakeFiles/point_generation.dir/classes/Point.cpp.o" "gcc" "CMakeFiles/point_generation.dir/classes/Point.cpp.o.d"
-  "/Users/yowlxc/itmo/cpp/lab1/point_generation.cpp" "CMakeFiles/point_generation.dir/point_generation.cpp.o" "gcc" "CMakeFiles/point_generation.dir/point_generation.cpp.o.d"
+  "/Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Dataset.cpp" "CMakeFiles/point_generation.dir/classes/Dataset.cpp.o" "gcc" "CMakeFiles/point_generation.dir/classes/Dataset.cpp.o.d"
+  "/Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Matrix.cpp" "CMakeFiles/point_generation.dir/classes/Matrix.cpp.o" "gcc" "CMakeFiles/point_generation.dir/classes/Matrix.cpp.o.d"
+  "/Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Point.cpp" "CMakeFiles/point_generation.dir/classes/Point.cpp.o" "gcc" "CMakeFiles/point_generation.dir/classes/Point.cpp.o.d"
+  "/Users/yowlxc/itmo/cpp/2cemestrforlabC-/point_generation.cpp" "CMakeFiles/point_generation.dir/point_generation.cpp.o" "gcc" "CMakeFiles/point_generation.dir/point_generation.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

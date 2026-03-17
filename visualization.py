@@ -1,54 +1,39 @@
-import json
 import matplotlib.pyplot as plt
+import json
 import numpy as np
 
-def read_clustered_points(filename):
-    with open(filename, 'r', encoding='utf-8') as file:
-        data = json.load(file)
-    
-    points = data['points']
-    
-    # Используем поле 'label' для определения кластера
-    if 'label' in points[0]:
-        clusters = {}
-        for point in points:
-            cluster_id = point.get('label', 0)  # Изменено с 'true_cluster' на 'label'
-            if cluster_id not in clusters:
-                clusters[cluster_id] = {'x': [], 'y': []}
-            clusters[cluster_id]['x'].append(point['x'])
-            clusters[cluster_id]['y'].append(point['y'])
-        return clusters
-    else:
-        print("Внимание: поле 'label' не найдено, все точки отображаются одним цветом")
-        # Если нет кластеров, возвращаем как один кластер
-        return {0: {'x': [p['x'] for p in points], 
-                   'y': [p['y'] for p in points]}}
+with open('build/points.json', 'r') as f:
+    data = json.load(f)
 
-def plot_clusters(clusters):
-    plt.figure(figsize=(12, 8))
-    
-    # Цвета для разных кластеров (0 и 1)
-    colors = ['blue', 'red']  # Синий для кластера 0, красный для кластера 1
-    
-    for i, (cluster_id, coords) in enumerate(clusters.items()):
-        color = colors[i % len(colors)]
-        plt.scatter(coords['x'], coords['y'], 
-                   c=color, alpha=0.6, s=50,  # Увеличил размер точек для наглядности
-                   label=f'Кластер {cluster_id}')
-    
-    plt.axhline(y=0, color='gray', linestyle='--', alpha=0.3)
-    plt.axvline(x=0, color='gray', linestyle='--', alpha=0.3)
-    
-    plt.title('Кластеризованные точки на координатной плоскости', fontsize=16)
-    plt.xlabel('X', fontsize=12)
-    plt.ylabel('Y', fontsize=12)
-    plt.grid(True, alpha=0.3)
-    plt.legend()
-    
-    plt.tight_layout()
-    plt.show()
+points = data['points']
+x = [p['x'] for p in points]
+y = [p['y'] for p in points]
+labels = [p['label'] for p in points]
 
-# Использование
-filename = 'build/points.json'
-clusters = read_clustered_points(filename)
-plot_clusters(clusters)
+# Преобразуем в numpy массивы для удобства
+x = np.array(x)
+y = np.array(y)
+labels = np.array(labels)
+
+plt.figure(figsize=(10, 8))
+
+# Задаем цвета для каждого кластера
+colors = ['blue', 'purple']  # кластер 0 - синий, кластер 1 - фиолетовый
+
+# Рисуем точки каждого кластера
+for cluster_id in [0, 1]:
+    mask = (labels == cluster_id)
+    plt.scatter(x[mask], y[mask], 
+               c=colors[cluster_id], 
+               label=f'Кластер {cluster_id}', 
+               s=50, alpha=0.8)
+
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.xlabel('X координата', fontsize=12)
+plt.ylabel('Y координата', fontsize=12)
+plt.title('Визуализация кластеров', fontsize=14)
+plt.legend()  # Добавляем легенду
+
+plt.tight_layout()
+plt.savefig('build/clusters.png', dpi=150, bbox_inches='tight')
+plt.show()

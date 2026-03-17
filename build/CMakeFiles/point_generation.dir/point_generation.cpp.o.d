@@ -1,5 +1,5 @@
 CMakeFiles/point_generation.dir/point_generation.cpp.o: \
-  /Users/yowlxc/itmo/cpp/lab1/point_generation.cpp \
+  /Users/yowlxc/itmo/cpp/2cemestrforlabC-/point_generation.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -885,6 +885,6 @@ CMakeFiles/point_generation.dir/point_generation.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Users/yowlxc/itmo/cpp/vcpkg/installed/arm64-osx/include/nlohmann/detail/macro_unscope.hpp \
   /Users/yowlxc/itmo/cpp/vcpkg/installed/arm64-osx/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
-  /Users/yowlxc/itmo/cpp/lab1/classes/Dataset.h \
-  /Users/yowlxc/itmo/cpp/lab1/classes/Point.h \
-  /Users/yowlxc/itmo/cpp/lab1/classes/Matrix.h
+  /Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Dataset.h \
+  /Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Point.h \
+  /Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Matrix.h

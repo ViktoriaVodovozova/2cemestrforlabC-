@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <vector>
 #include <cmath>
 #include <ctime>
 #include <nlohmann/json.hpp>
@@ -11,57 +10,90 @@
 
 using json = nlohmann::json;
 
-int main() {
+double randomDouble(double min, double max) {
+    return min + (max - min) * (rand() / (double)RAND_MAX);
+}
+
+Dataset get_points (int first_cl_size, int second_cl_size) {
     srand(time(nullptr));
-    std::ofstream fout("points.json");
-    json json_file;
-    json_file["points"] = json::array();
+    
+    // Создаем объект Dataset для хранения всех точек
+    Dataset dataset;
 
     // center1 и center2 - центры кластеров 1 и 2
     Point center1, center2;
 
     // задаем центры кластеров в диапазоне от -10 000 до 10 000
-    center1.x = rand() % 20000 - 10000;
-    center1.y = rand() % 20000 - 10000;
+    center1.x = randomDouble(100.0, 200.0);
+    center1.y = randomDouble(100.0, 200.0);
     center1.label = 0;
-    center2.x = rand() % 20000 - 10000;
-    center2.y = rand() % 20000 - 10000;
+    center2.x = randomDouble(100.0, 200.0);
+    center2.y = randomDouble(100.0, 200.0);
     center2.label = 1;
 
-    float rad = sqrt(pow((center1.x - center2.x), 2) + pow((center1.y - center2.y), 2)) * 0.5 * 0.8;
+    float rad = sqrt(pow((center1.x - center2.x), 2) + pow((center1.y - center2.y), 2)) * 0.5 * 0.3;
 
-    // точки первого кластера
-    for(int i = 0; i < 1000; i++){
-    // for(int i = 0; i < int((rand() % 9900 + 100)); i++){
-        bool f;
-        f = rand() % 2;
+    // Генерация точек
+    // Первый кластер
+    for(int i = 0; i < first_cl_size; ++i){
         Point current;
 
-        if(f == 1){
-            current.x = rand() % (int)(2*rad) + (center1.x - rad);
-            current.y = rand() % (int)(2*rad) + (center1.y - rad);
-            current.label = 1;
-        }
-        else {
-            current.x = rand() % (int)(2*rad) + (center2.x - rad);
-            current.y = rand() % (int)(2*rad) + (center2.y - rad);  
-            current.label = 0;
-        }
+        current.x = rand() % (int)(2*rad) + (center1.x - rad);
+        current.y = rand() % (int)(2*rad) + (center1.y - rad);
+        current.label = 0;
 
-        json_file["points"].push_back({{"x", current.x}, {"y", current.y}, {"label", current.label}});
+        // Добавляем точку в Dataset
+        dataset.addPoint(current);
     }
+
+    // Второй кластер
+    for(int i = 0; i < second_cl_size; ++i){
+        Point current;
+
+        current.x = rand() % (int)(2*rad) + (center2.x - rad);
+        current.y = rand() % (int)(2*rad) + (center2.y - rad);
+        current.label = 1;
+
+        // Добавляем точку в Dataset
+        dataset.addPoint(current);
+    }
+    return dataset;
+}
+    
+int main() {
+
+    std::cout << "Сколько точек должно быть в первом и втором кластерах? Последовательно введите с клавиатуры:";
+    int first_cl_size, second_cl_size;
+    std::cin >> first_cl_size >> second_cl_size;
+
+    Dataset data = get_points(first_cl_size, second_cl_size);
+
+    // Выводим информацию о созданном датасете
+    std::cout << "Создан датасет с " << data.size() << " точками" << std::endl;
+
+    // Запись в JSON из Dataset
+    std::ofstream fout("points.json");
 
     fout << "{\n";
     fout << "    \"points\": [\n";
-
-    for (int i = 0; i < int(json_file["points"].size()); i++){
-        fout << "       " << json_file["points"][i].dump();
-        if (i < json_file["points"].size() - 1) {
-            fout << "," << "\n";
+    
+    for (unsigned int i = 0; i < data.size(); i++) {
+        Point p = data.getPoint(i);
+        fout << "        {\"x\": " << p.x << ", \"y\": " << p.y << ", \"label\": " << p.label << "}";
+        if (i < data.size() - 1) {
+            fout << ",";
         }
+        fout << "\n";
     }
-
+    
     fout << "    ]\n";  
     fout << "}\n";
+    
+    fout.close();
+    
+    std::cout << "Точки успешно сохранены в points.json" << std::endl;
+    system("python3 ../visualization.py");
+    std::cout << 'a';
+
     return 0;
 }

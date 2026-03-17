@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/yowlxc/itmo/cpp/lab1
+CMAKE_SOURCE_DIR = /Users/yowlxc/itmo/cpp/2cemestrforlabC-
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/yowlxc/itmo/cpp/lab1/build
+CMAKE_BINARY_DIR = /Users/yowlxc/itmo/cpp/2cemestrforlabC-/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/point_generation.dir/depend.make
@@ -73,60 +73,60 @@ CMakeFiles/point_generation.dir/codegen:
 .PHONY : CMakeFiles/point_generation.dir/codegen
 
 CMakeFiles/point_generation.dir/point_generation.cpp.o: CMakeFiles/point_generation.dir/flags.make
-CMakeFiles/point_generation.dir/point_generation.cpp.o: /Users/yowlxc/itmo/cpp/lab1/point_generation.cpp
+CMakeFiles/point_generation.dir/point_generation.cpp.o: /Users/yowlxc/itmo/cpp/2cemestrforlabC-/point_generation.cpp
 CMakeFiles/point_generation.dir/point_generation.cpp.o: CMakeFiles/point_generation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yowlxc/itmo/cpp/lab1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/point_generation.dir/point_generation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/point_generation.dir/point_generation.cpp.o -MF CMakeFiles/point_generation.dir/point_generation.cpp.o.d -o CMakeFiles/point_generation.dir/point_generation.cpp.o -c /Users/yowlxc/itmo/cpp/lab1/point_generation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yowlxc/itmo/cpp/2cemestrforlabC-/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/point_generation.dir/point_generation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/point_generation.dir/point_generation.cpp.o -MF CMakeFiles/point_generation.dir/point_generation.cpp.o.d -o CMakeFiles/point_generation.dir/point_generation.cpp.o -c /Users/yowlxc/itmo/cpp/2cemestrforlabC-/point_generation.cpp
 
 CMakeFiles/point_generation.dir/point_generation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/point_generation.dir/point_generation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yowlxc/itmo/cpp/lab1/point_generation.cpp > CMakeFiles/point_generation.dir/point_generation.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yowlxc/itmo/cpp/2cemestrforlabC-/point_generation.cpp > CMakeFiles/point_generation.dir/point_generation.cpp.i
 
 CMakeFiles/point_generation.dir/point_generation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/point_generation.dir/point_generation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yowlxc/itmo/cpp/lab1/point_generation.cpp -o CMakeFiles/point_generation.dir/point_generation.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yowlxc/itmo/cpp/2cemestrforlabC-/point_generation.cpp -o CMakeFiles/point_generation.dir/point_generation.cpp.s
 
 CMakeFiles/point_generation.dir/classes/Point.cpp.o: CMakeFiles/point_generation.dir/flags.make
-CMakeFiles/point_generation.dir/classes/Point.cpp.o: /Users/yowlxc/itmo/cpp/lab1/classes/Point.cpp
+CMakeFiles/point_generation.dir/classes/Point.cpp.o: /Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Point.cpp
 CMakeFiles/point_generation.dir/classes/Point.cpp.o: CMakeFiles/point_generation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yowlxc/itmo/cpp/lab1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/point_generation.dir/classes/Point.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/point_generation.dir/classes/Point.cpp.o -MF CMakeFiles/point_generation.dir/classes/Point.cpp.o.d -o CMakeFiles/point_generation.dir/classes/Point.cpp.o -c /Users/yowlxc/itmo/cpp/lab1/classes/Point.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yowlxc/itmo/cpp/2cemestrforlabC-/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/point_generation.dir/classes/Point.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/point_generation.dir/classes/Point.cpp.o -MF CMakeFiles/point_generation.dir/classes/Point.cpp.o.d -o CMakeFiles/point_generation.dir/classes/Point.cpp.o -c /Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Point.cpp
 
 CMakeFiles/point_generation.dir/classes/Point.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/point_generation.dir/classes/Point.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yowlxc/itmo/cpp/lab1/classes/Point.cpp > CMakeFiles/point_generation.dir/classes/Point.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Point.cpp > CMakeFiles/point_generation.dir/classes/Point.cpp.i
 
 CMakeFiles/point_generation.dir/classes/Point.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/point_generation.dir/classes/Point.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yowlxc/itmo/cpp/lab1/classes/Point.cpp -o CMakeFiles/point_generation.dir/classes/Point.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Point.cpp -o CMakeFiles/point_generation.dir/classes/Point.cpp.s
 
 CMakeFiles/point_generation.dir/classes/Matrix.cpp.o: CMakeFiles/point_generation.dir/flags.make
-CMakeFiles/point_generation.dir/classes/Matrix.cpp.o: /Users/yowlxc/itmo/cpp/lab1/classes/Matrix.cpp
+CMakeFiles/point_generation.dir/classes/Matrix.cpp.o: /Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Matrix.cpp
 CMakeFiles/point_generation.dir/classes/Matrix.cpp.o: CMakeFiles/point_generation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yowlxc/itmo/cpp/lab1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/point_generation.dir/classes/Matrix.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/point_generation.dir/classes/Matrix.cpp.o -MF CMakeFiles/point_generation.dir/classes/Matrix.cpp.o.d -o CMakeFiles/point_generation.dir/classes/Matrix.cpp.o -c /Users/yowlxc/itmo/cpp/lab1/classes/Matrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yowlxc/itmo/cpp/2cemestrforlabC-/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/point_generation.dir/classes/Matrix.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/point_generation.dir/classes/Matrix.cpp.o -MF CMakeFiles/point_generation.dir/classes/Matrix.cpp.o.d -o CMakeFiles/point_generation.dir/classes/Matrix.cpp.o -c /Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Matrix.cpp
 
 CMakeFiles/point_generation.dir/classes/Matrix.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/point_generation.dir/classes/Matrix.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yowlxc/itmo/cpp/lab1/classes/Matrix.cpp > CMakeFiles/point_generation.dir/classes/Matrix.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Matrix.cpp > CMakeFiles/point_generation.dir/classes/Matrix.cpp.i
 
 CMakeFiles/point_generation.dir/classes/Matrix.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/point_generation.dir/classes/Matrix.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yowlxc/itmo/cpp/lab1/classes/Matrix.cpp -o CMakeFiles/point_generation.dir/classes/Matrix.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Matrix.cpp -o CMakeFiles/point_generation.dir/classes/Matrix.cpp.s
 
 CMakeFiles/point_generation.dir/classes/Dataset.cpp.o: CMakeFiles/point_generation.dir/flags.make
-CMakeFiles/point_generation.dir/classes/Dataset.cpp.o: /Users/yowlxc/itmo/cpp/lab1/classes/Dataset.cpp
+CMakeFiles/point_generation.dir/classes/Dataset.cpp.o: /Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Dataset.cpp
 CMakeFiles/point_generation.dir/classes/Dataset.cpp.o: CMakeFiles/point_generation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yowlxc/itmo/cpp/lab1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/point_generation.dir/classes/Dataset.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/point_generation.dir/classes/Dataset.cpp.o -MF CMakeFiles/point_generation.dir/classes/Dataset.cpp.o.d -o CMakeFiles/point_generation.dir/classes/Dataset.cpp.o -c /Users/yowlxc/itmo/cpp/lab1/classes/Dataset.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yowlxc/itmo/cpp/2cemestrforlabC-/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/point_generation.dir/classes/Dataset.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/point_generation.dir/classes/Dataset.cpp.o -MF CMakeFiles/point_generation.dir/classes/Dataset.cpp.o.d -o CMakeFiles/point_generation.dir/classes/Dataset.cpp.o -c /Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Dataset.cpp
 
 CMakeFiles/point_generation.dir/classes/Dataset.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/point_generation.dir/classes/Dataset.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yowlxc/itmo/cpp/lab1/classes/Dataset.cpp > CMakeFiles/point_generation.dir/classes/Dataset.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Dataset.cpp > CMakeFiles/point_generation.dir/classes/Dataset.cpp.i
 
 CMakeFiles/point_generation.dir/classes/Dataset.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/point_generation.dir/classes/Dataset.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yowlxc/itmo/cpp/lab1/classes/Dataset.cpp -o CMakeFiles/point_generation.dir/classes/Dataset.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Dataset.cpp -o CMakeFiles/point_generation.dir/classes/Dataset.cpp.s
 
 # Object files for target point_generation
 point_generation_OBJECTS = \
@@ -144,7 +144,7 @@ point_generation: CMakeFiles/point_generation.dir/classes/Matrix.cpp.o
 point_generation: CMakeFiles/point_generation.dir/classes/Dataset.cpp.o
 point_generation: CMakeFiles/point_generation.dir/build.make
 point_generation: CMakeFiles/point_generation.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/yowlxc/itmo/cpp/lab1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable point_generation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/yowlxc/itmo/cpp/2cemestrforlabC-/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable point_generation"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/point_generation.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -156,6 +156,6 @@ CMakeFiles/point_generation.dir/clean:
 .PHONY : CMakeFiles/point_generation.dir/clean
 
 CMakeFiles/point_generation.dir/depend:
-	cd /Users/yowlxc/itmo/cpp/lab1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/yowlxc/itmo/cpp/lab1 /Users/yowlxc/itmo/cpp/lab1 /Users/yowlxc/itmo/cpp/lab1/build /Users/yowlxc/itmo/cpp/lab1/build /Users/yowlxc/itmo/cpp/lab1/build/CMakeFiles/point_generation.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/yowlxc/itmo/cpp/2cemestrforlabC-/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/yowlxc/itmo/cpp/2cemestrforlabC- /Users/yowlxc/itmo/cpp/2cemestrforlabC- /Users/yowlxc/itmo/cpp/2cemestrforlabC-/build /Users/yowlxc/itmo/cpp/2cemestrforlabC-/build /Users/yowlxc/itmo/cpp/2cemestrforlabC-/build/CMakeFiles/point_generation.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/point_generation.dir/depend
 
