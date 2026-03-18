@@ -25,19 +25,19 @@ double totalLoss(const Dataset& data, double k, double b) {
 int main() {
     std::cout << "=== Генерация кластеров ===" << std::endl;
     
-    // параметры прямой
-    double k = 5.2;
-    double b = 13.4;
-    
-    std::cout << "Прямая: y = " << k << "x + " << b << std::endl;
-    
-    // генерируем точки (по 100 в каждом кластере)
-    Dataset data = get_points(-2, 10, k, b);
+    // генерируем точки (по 100 в каждом кластере, идеальная прямая - y = -2x + 10)
+    Dataset data = get_points(100, 100, -2, 10);
     std::cout << "Сгенерировано " << data.size() << " точек" << std::endl;
     
     // Считаем total loss
+    double k, b;
+    std::cout << "Введите последовательно k и b для проверяемой прямой y = kx + b:" << std::endl << "k = ";
+    std::cin >> k;
+    std::cout << "b = ";
+    std::cin >> b;
     double loss = totalLoss(data, k, b);
-    std::cout << "total loss (ошибка классификации): " << loss * 100 << "%" << std::endl;
+    std::cout << "Прямая: y = " << k << "x + " << b << std::endl;
+    std::cout << "total loss: " << loss * 100 << "%" << std::endl;
     
     // Сохраняем в JSON
     std::ofstream fout("points.json");

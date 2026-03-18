@@ -29,7 +29,12 @@ Dataset get_points(int first_cl_size, int second_cl_size, float k, float b) {
     center2.y = center1.y + 2*(k*center1.x - center1.y + b) / (k*k + 1);
     center2.label = 1;
 
-    double radius = sqrt(pow((center1.x - center2.x), 2) + pow((center1.y - center2.y), 2)) * 0.5 * 0.8;
+    if (center1.y > k * center1.x + b){
+        center1.label = 1;
+        center2.label = 0;
+    }
+
+    double radius = sqrt(pow((center1.x - center2.x), 2) + pow((center1.y - center2.y), 2)) * 0.5 * 0.9;
 
     // генерация точек первого кластера
     for(int i = 0; i < first_cl_size; ++i){
@@ -41,7 +46,7 @@ Dataset get_points(int first_cl_size, int second_cl_size, float k, float b) {
 
         current.x = center1.x + r * cos(angle);
         current.y = center1.y + r * sin(angle);
-        current.label = 0;
+        current.label = center1.label;
 
         dataset.addPoint(current);
     }
@@ -55,7 +60,7 @@ Dataset get_points(int first_cl_size, int second_cl_size, float k, float b) {
 
         current.x = center2.x + r * cos(angle);
         current.y = center2.y + r * sin(angle);
-        current.label = 1;
+        current.label = center2.label;
 
         dataset.addPoint(current);
     }
