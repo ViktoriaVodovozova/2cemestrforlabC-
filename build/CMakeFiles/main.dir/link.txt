@@ -1,0 +1,1 @@
+/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/get_points.cpp.o CMakeFiles/main.dir/classes/Point.cpp.o CMakeFiles/main.dir/classes/Matrix.cpp.o CMakeFiles/main.dir/classes/Dataset.cpp.o -o main
