@@ -5,9 +5,13 @@
 #include "classes/Matrix.h"
 #include "classes/Point.h"
 #include "get_points.h"
+#include <windows.h>
+
 
 // функция для подсчета ошибки (сколько точек не на своих местах)
 double totalLoss(const Dataset& data, double k, double b) {
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
     int errors = 0;
     for (int i = 0; i < data.size(); i++) {
         Point p = data.getPoint(i);
@@ -23,10 +27,13 @@ double totalLoss(const Dataset& data, double k, double b) {
 }
 
 int main() {
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
     std::cout << "=== Генерация кластеров ===" << std::endl;
     
     // генерируем точки (по 100 в каждом кластере, идеальная прямая - y = -2x + 10)
-    Dataset data = get_points(100, 100, -2, 10);
+    Dataset data = get_points(100, 100, -2, 10, randomDouble);
     std::cout << "Сгенерировано " << data.size() << " точек" << std::endl;
     
     // Считаем total loss
