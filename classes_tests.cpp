@@ -1,57 +1,87 @@
 #include <iostream>
-#include "Matrix.h"
-#include "Point.h"
-#include "Dataset.h"
+#include <cassert>
+#include "classes/Matrix.h"
+#include "classes/Point.h"
+#include "classes/Dataset.h"
 
 int main() {
     std::cout << "=== Тест Matrix ===" << std::endl;
 
-    // Создаём матрицу 2x3
+    // cоздаём матрицу 2x3
     Matrix A(2, 3);
     A.randomize(-1.0, 1.0);
 
-    std::cout << "Матрица A (2x3):" << std::endl;
-    A.print();
-
-    // Создаём матрицу 3x1
+    // cоздаём матрицу 3x1
     Matrix B(3, 1);
     B.randomize(-1.0, 1.0);
 
-    std::cout << "\nМатрица B (3x1):" << std::endl;
-    B.print();
-
-    // Умножаем
+    // умножаем матрицы
     Matrix C = A * B;
 
-    std::cout << "\nРезультат A * B (2x1):" << std::endl;
-    C.print();
+    // проверяем размеры матрицы, после умножения
+    assert(C.getRows() == 2);
+    assert(C.getCols() == 1);
 
-    // Тестируем Point
+    std::cout << "Matrix работает\n";
+
+
     std::cout << "\n=== Тест Point ===" << std::endl;
+
+    // создаём точку
     Point p(1.5, 2.3, 1);
-    std::cout << "Точка: x=" << p.x << ", y=" << p.y << ", label=" << p.label << std::endl;
 
-    // Тестируем Dataset
+    // проверяем значения полей
+    assert(p.x == 1.5);
+    assert(p.y == 2.3);
+    assert(p.label == 1);
+
+    std::cout << "Point работает\n";
+
+
     std::cout << "\n=== Тест Dataset ===" << std::endl;
-    Dataset data;
 
-    // Добавляем точки вручную
+    // проверка пустого датасета
+    Dataset empty;
+    assert(empty.size() == 0);
+    std::cout << "Dataset пуст\n";
+
+    // создаём датасет и добавляем точки
+    Dataset data;
     data.addPoint(1.0, 2.0, 1);
     data.addPoint(-1.0, 0.5, 0);
-    data.addPoint(2.0, 3.0, 1);
-    data.addPoint(-0.5, -1.0, 0);
 
-    std::cout << "Количество точек: " << data.size() << std::endl;
+    // проверяем размер
+    assert(data.size() == 2);
+    std::cout << "Добавление точек работает\n";
 
-    // Преобразуем в матрицы
+    // проверяем получение точки
+    Point p0 = data.getPoint(0);
+    assert(p0.x == 1.0);
+    assert(p0.y == 2.0);
+    assert(p0.label == 1);
+    std::cout << "getPoint работает\n";
+
+    // преобразуем в матрицы
     Matrix X = data.toMatrix();
     Matrix Y = data.labelsToMatrix();
 
-    std::cout << "\nМатрица координат X:" << std::endl;
-    X.print();
+    // проверяем размеры матриц
+    assert(X.getRows() == 2);
+    assert(X.getCols() == 2);
 
-    std::cout << "\nМатрица меток Y:" << std::endl;
-    Y.print();
+    assert(Y.getRows() == 2);
+    assert(Y.getCols() == 1);
+
+    std::cout << "Преобразование в матрицы работает\n";
+
+    // проверка очистки
+    data.clear();
+    assert(data.size() == 0);
+
+    std::cout << "Очистка Dataset работает\n";
+
+
+    std::cout << "\n=== Все тесты пройдены ===" << std::endl;
 
     return 0;
 }

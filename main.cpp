@@ -12,7 +12,7 @@ std::pair<Matrix, Matrix> loadFromJSON(const std::string& filename);
 int main() {
     std::cout << "=== Загрузка данных из JSON ===" << std::endl;
 
-    // Загружаем из файла (путь относительно папки, откуда запускаешь)
+    // загружаем из файла (путь относительно папки, откуда запускаешь)
     auto [X, y] = loadFromJSON("points.json");
 
     if (X.getRows() == 0) {

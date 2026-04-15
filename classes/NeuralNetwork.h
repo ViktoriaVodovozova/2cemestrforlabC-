@@ -5,7 +5,7 @@
 #include <cmath>
 #include <iostream>
 
-// Вспомогательные функции активации
+// вспомогательные функции активации
 inline double sigmoid(double x) {
     return 1.0 / (1.0 + exp(-x));
 }
@@ -15,7 +15,7 @@ inline double sigmoidDerivative(double x) {
     return s * (1 - s);
 }
 
-// Простой слой для 2-слойной сети
+// простой слой для 2-слойной сети
 class Layer {
 private:
     Matrix weights;  // (inSize+1) × outSize
@@ -37,14 +37,14 @@ public:
                 inputWithBias.set(i, j, input.get(i, j));
 
         Matrix z = inputWithBias * weights;  // линейная часть
-        // Применяем sigmoid поэлементно
+        // применяем sigmoid поэлементно
         for (int i = 0; i < z.getRows(); i++)
             for (int j = 0; j < z.getCols(); j++)
                 z.set(i, j, sigmoid(z.get(i, j)));
         return z;
     }
 
-    // Для backprop: вернуть веса (без bias-строки)
+    // для backprop: вернуть веса (без bias-строки)
     Matrix getWeightsNoBias() const {
         Matrix w(inSize, outSize);
         for (int i = 0; i < inSize; i++)
@@ -53,7 +53,7 @@ public:
         return w;
     }
 
-    // Обновление весов: dW (in+1)×out, db (1×out)
+    // обновление весов: dW (in+1)×out, db (1×out)
     void update(const Matrix& dW, const Matrix& db, double lr) {
         for (int i = 0; i < weights.getRows(); i++)
             for (int j = 0; j < weights.getCols(); j++) {
@@ -68,7 +68,7 @@ public:
     int getOutSize() const { return outSize; }
 };
 
-// ====== НЕЙРОСЕТЬ (твоя часть) ======
+// ====== НЕЙРОСЕТЬ  ======
 class NeuralNetwork {
 private:
     Layer hidden, output;
@@ -81,7 +81,7 @@ public:
     NeuralNetwork(int hiddenNeurons, double learningRate = 0.1)
         : hidden(2, hiddenNeurons), output(hiddenNeurons, 1), lr(learningRate) {}
 
-    // Прямой проход (для одного примера или батча)
+    // прямой проход (для одного примера или батча)
     Matrix forward(const Matrix& X) {
         lastInput = X;
         lastZ1 = addBias(X) * hidden.getFullWeights();
@@ -92,7 +92,7 @@ public:
         return lastA2;
     }
 
-    // Обучение на одном примере (SGD)
+    // обучение на одном примере (SGD)
     void trainStep(const Matrix& x, double yTrue) {
         // Forward
         Matrix pred = forward(x);  // x: 1×2, pred: 1×1
@@ -120,7 +120,7 @@ public:
         output.update(dW2, dz2, lr);
     }
 
-    // Полный цикл обучения
+    // полный цикл обучения
     void train(const Matrix& X, const Matrix& y, int epochs) {
         for (int epoch = 0; epoch < epochs; epoch++) {
             double loss = 0;
@@ -142,13 +142,13 @@ public:
         }
     }
 
-    // Предсказание класса (0 или 1)
+    // предсказание класса (0 или 1)
     int predict(const Matrix& x) {
         Matrix out = forward(x);
         return (out.get(0, 0) >= 0.5) ? 1 : 0;
     }
 
-    // Точность на наборе данных
+    // точность на наборе данных
     double accuracy(const Matrix& X, const Matrix& y) {
         int correct = 0;
         for (int i = 0; i < X.getRows(); i++) {
@@ -161,7 +161,7 @@ public:
     }
 
 private:
-    // Добавить столбец единиц (bias) к матрице
+    // добавить столбец единиц (bias) к матрице
     Matrix addBias(const Matrix& m) {
         Matrix res(m.getRows(), m.getCols() + 1, 1.0);
         for (int i = 0; i < m.getRows(); i++)
@@ -170,7 +170,7 @@ private:
         return res;
     }
 
-    // Применить sigmoid ко всей матрице
+    // применить sigmoid ко всей матрице
     Matrix applySigmoid(const Matrix& m) {
         Matrix res(m.getRows(), m.getCols());
         for (int i = 0; i < m.getRows(); i++)
