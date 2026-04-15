@@ -12,7 +12,7 @@ double randomDouble(double min, double max) {
     return min + (max - min) * (dist(gen));
 }
 
-Dataset get_points(int first_cl_size, int second_cl_size, float k, float b) {
+Dataset get_points(int first_cl_size, int second_cl_size, float k, float b, std::function<double(double, double)> randFunc)  {
     // создаем объект Dataset для хранения всех точек
     Dataset dataset;
 
@@ -20,8 +20,8 @@ Dataset get_points(int first_cl_size, int second_cl_size, float k, float b) {
     Point center1, center2;
 
     // задаем центры кластеров в диапазоне от -200 до 200
-    center1.x = randomDouble(-200.0, 200.0);
-    center1.y = randomDouble(-200.0, 200.0);
+    center1.x = randFunc(-200.0, 200.0);
+    center1.y = randFunc(-200.0, 200.0);
     center1.label = 0;
 
     // для центра второго кластера используются формулы для нахождения точки, симметричной данной относительно заданной прямой
@@ -41,8 +41,8 @@ Dataset get_points(int first_cl_size, int second_cl_size, float k, float b) {
         Point current;
 
         // генерируем случайный угол и случайное расстояние
-        double angle = 2 * M_PI * dist(gen);
-        double r = radius * sqrt(dist(gen)); // sqrt для равномерного распределения по площади
+        double angle = 2 * M_PI * randFunc(0.0, 1.0);
+        double r = radius * sqrt(randFunc(0.0, 1.0)); // sqrt для равномерного распределения по площади
 
         current.x = center1.x + r * cos(angle);
         current.y = center1.y + r * sin(angle);
@@ -55,8 +55,8 @@ Dataset get_points(int first_cl_size, int second_cl_size, float k, float b) {
     for(int i = 0; i < second_cl_size; ++i){
         Point current;
 
-        double angle = 2 * M_PI * dist(gen);
-        double r = radius * sqrt(dist(gen));
+        double angle = 2 * M_PI * randFunc(0.0, 1.0);
+        double r = radius * sqrt(randFunc(0.0, 1.0));
 
         current.x = center2.x + r * cos(angle);
         current.y = center2.y + r * sin(angle);

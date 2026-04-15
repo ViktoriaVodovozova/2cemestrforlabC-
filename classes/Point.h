@@ -8,7 +8,7 @@
 struct Point {
     double x;      // координата X
     double y;      // координата Y
-    int label;     // класс точки: 0 (жёлтый) или 1 (синий)
+    int label;     // класс точки: 0 (синий) или 1 (фиолетовый)
 
     Point();                    // точка (0, 0) с классом 0
     Point(double x, double y, int label);  // точка с координатами

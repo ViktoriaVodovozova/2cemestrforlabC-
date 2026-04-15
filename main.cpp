@@ -25,8 +25,8 @@ double totalLoss(const Dataset& data, double k, double b) {
 int main() {
     std::cout << "=== Генерация кластеров ===" << std::endl;
     
-    // генерируем точки (по 100 в каждом кластере, идеальная прямая - y = -2x + 10)
-    Dataset data = get_points(100, 100, -2, 10);
+    // генерируем точки (по 1000 в каждом кластере, идеальная прямая - y = -2x + 10)
+    Dataset data = get_points(1000, 1000, -2, 10);
     std::cout << "Сгенерировано " << data.size() << " точек" << std::endl;
     
     // Считаем total loss
