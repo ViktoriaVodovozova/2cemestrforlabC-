@@ -35,5 +35,5 @@ plt.title('Визуализация кластеров', fontsize=14)
 plt.legend()  # добавляем легенду
 
 plt.tight_layout()
-plt.savefig('build/clusters.png', dpi=150, bbox_inches='tight')
+plt.savefig('build/points.png', dpi=150, bbox_inches='tight')
 plt.show()

@@ -8,13 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/viktoriavodovozova/Documents/Lab1_/classes/Dataset.cpp" "CMakeFiles/main.dir/classes/Dataset.cpp.o" "gcc" "CMakeFiles/main.dir/classes/Dataset.cpp.o.d"
-  "/Users/viktoriavodovozova/Documents/Lab1_/classes/Matrix.cpp" "CMakeFiles/main.dir/classes/Matrix.cpp.o" "gcc" "CMakeFiles/main.dir/classes/Matrix.cpp.o.d"
-  "/Users/viktoriavodovozova/Documents/Lab1_/classes/NeuralNetwork.cpp" "CMakeFiles/main.dir/classes/NeuralNetwork.cpp.o" "gcc" "CMakeFiles/main.dir/classes/NeuralNetwork.cpp.o.d"
-  "/Users/viktoriavodovozova/Documents/Lab1_/classes/Point.cpp" "CMakeFiles/main.dir/classes/Point.cpp.o" "gcc" "CMakeFiles/main.dir/classes/Point.cpp.o.d"
-  "/Users/viktoriavodovozova/Documents/Lab1_/get_points.cpp" "CMakeFiles/main.dir/get_points.cpp.o" "gcc" "CMakeFiles/main.dir/get_points.cpp.o.d"
-  "/Users/viktoriavodovozova/Documents/Lab1_/json_loader.cpp" "CMakeFiles/main.dir/json_loader.cpp.o" "gcc" "CMakeFiles/main.dir/json_loader.cpp.o.d"
-  "/Users/viktoriavodovozova/Documents/Lab1_/main.cpp" "CMakeFiles/main.dir/main.cpp.o" "gcc" "CMakeFiles/main.dir/main.cpp.o.d"
+  "/Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Dataset.cpp" "CMakeFiles/main.dir/classes/Dataset.cpp.o" "gcc" "CMakeFiles/main.dir/classes/Dataset.cpp.o.d"
+  "/Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Matrix.cpp" "CMakeFiles/main.dir/classes/Matrix.cpp.o" "gcc" "CMakeFiles/main.dir/classes/Matrix.cpp.o.d"
+  "/Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/NeuralNetwork.cpp" "CMakeFiles/main.dir/classes/NeuralNetwork.cpp.o" "gcc" "CMakeFiles/main.dir/classes/NeuralNetwork.cpp.o.d"
+  "/Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Point.cpp" "CMakeFiles/main.dir/classes/Point.cpp.o" "gcc" "CMakeFiles/main.dir/classes/Point.cpp.o.d"
+  "/Users/yowlxc/itmo/cpp/2cemestrforlabC-/main.cpp" "CMakeFiles/main.dir/main.cpp.o" "gcc" "CMakeFiles/main.dir/main.cpp.o.d"
+  "/Users/yowlxc/itmo/cpp/2cemestrforlabC-/utils/get_points.cpp" "CMakeFiles/main.dir/utils/get_points.cpp.o" "gcc" "CMakeFiles/main.dir/utils/get_points.cpp.o.d"
+  "/Users/yowlxc/itmo/cpp/2cemestrforlabC-/utils/json_loader.cpp" "CMakeFiles/main.dir/utils/json_loader.cpp.o" "gcc" "CMakeFiles/main.dir/utils/json_loader.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

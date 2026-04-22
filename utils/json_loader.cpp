@@ -3,7 +3,7 @@
 #include <fstream>           // для std::ifstream
 #include <nlohmann/json.hpp> // для JSON
 #include <utility>           // для std::pair
-#include "classes/Matrix.h"  // для Matrix
+#include "../classes/Matrix.h"  // для Matrix
 using json = nlohmann::json;
 
 // загружает данные из JSON и возвращает матрицы признаков и меток
@@ -27,7 +27,7 @@ std::pair<Matrix, Matrix> loadFromJSON(const std::string& filename) {
         double yy = j["points"][i]["y"];  // yy, чтобы не путать с меткой y
         int label = j["points"][i]["label"];
 
-        // нормализация: делим на 100, чтобы числа были ~[-2, 2]
+        // нормализация: делим на 100, чтобы числа были в интервале [-2, 2]
         X.set(i, 0, x / 100.0);
         X.set(i, 1, yy / 100.0);
         y.set(i, 0, label);

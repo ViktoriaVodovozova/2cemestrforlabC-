@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cassert>
-#include "classes/Matrix.h"
-#include "classes/Point.h"
-#include "classes/Dataset.h"
+#include "../classes/Matrix.h"
+#include "../classes/Point.h"
+#include "../classes/Dataset.h"
 
 int main() {
     std::cout << "=== Тест Matrix ===" << std::endl;

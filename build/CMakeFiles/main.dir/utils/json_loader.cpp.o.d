@@ -1,5 +1,5 @@
-CMakeFiles/main.dir/main.cpp.o: \
-  /Users/yowlxc/itmo/cpp/2cemestrforlabC-/main.cpp \
+CMakeFiles/main.dir/utils/json_loader.cpp.o: \
+  /Users/yowlxc/itmo/cpp/2cemestrforlabC-/utils/json_loader.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -793,30 +793,6 @@ CMakeFiles/main.dir/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/stack.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/print \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/copy_options.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/directory_entry.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/file_status.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/file_type.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/perms.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/file_time_type.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/file_clock.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/filesystem_error.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/operations.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/perm_options.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/space_info.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/directory_iterator.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/directory_options.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/u8path.h \
-  /Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Dataset.h \
-  /Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Point.h \
-  /Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/Matrix.h \
-  /Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/NeuralNetwork.h \
   /Users/yowlxc/itmo/cpp/vcpkg/installed/arm64-osx/include/nlohmann/json.hpp \
   /Users/yowlxc/itmo/cpp/vcpkg/installed/arm64-osx/include/nlohmann/adl_serializer.hpp \
   /Users/yowlxc/itmo/cpp/vcpkg/installed/arm64-osx/include/nlohmann/detail/abi_macros.hpp \
@@ -846,6 +822,25 @@ CMakeFiles/main.dir/main.cpp.o: \
   /Users/yowlxc/itmo/cpp/vcpkg/installed/arm64-osx/include/nlohmann/detail/string_concat.hpp \
   /Users/yowlxc/itmo/cpp/vcpkg/installed/arm64-osx/include/nlohmann/detail/meta/identity_tag.hpp \
   /Users/yowlxc/itmo/cpp/vcpkg/installed/arm64-osx/include/nlohmann/detail/meta/std_fs.hpp \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/copy_options.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/directory_entry.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/file_status.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/file_type.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/perms.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/file_time_type.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/file_clock.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/filesystem_error.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/operations.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/perm_options.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/space_info.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/directory_iterator.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/directory_options.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/u8path.h \
   /Users/yowlxc/itmo/cpp/vcpkg/installed/arm64-osx/include/nlohmann/detail/conversions/to_json.hpp \
   /Users/yowlxc/itmo/cpp/vcpkg/installed/arm64-osx/include/nlohmann/detail/iterators/iteration_proxy.hpp \
   /Users/yowlxc/itmo/cpp/vcpkg/installed/arm64-osx/include/nlohmann/detail/string_utils.hpp \
@@ -889,5 +884,5 @@ CMakeFiles/main.dir/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Users/yowlxc/itmo/cpp/vcpkg/installed/arm64-osx/include/nlohmann/detail/macro_unscope.hpp \
   /Users/yowlxc/itmo/cpp/vcpkg/installed/arm64-osx/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
-  /Users/yowlxc/itmo/cpp/2cemestrforlabC-/utils/get_points.h \
-  /Users/yowlxc/itmo/cpp/2cemestrforlabC-/utils/../classes/Dataset.h
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
+  /Users/yowlxc/itmo/cpp/2cemestrforlabC-/utils/../classes/Matrix.h

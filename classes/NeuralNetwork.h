@@ -115,7 +115,7 @@ public:
         Matrix xWithBias = addBias(x);  // 1×3
         Matrix dW1 = xWithBias.transpose() * dz1;  // 3×H
 
-        // Обновление
+        // oбновление
         hidden.update(dW1, Matrix(1, hidden.getOutSize()), lr);
         output.update(dW2, dz2, lr);
     }
@@ -133,7 +133,7 @@ public:
 
                 trainStep(x, target);
 
-                // Loss для мониторинга
+                // loss для мониторинга
                 double pred = forward(x).get(0, 0);
                 loss -= target * log(pred + 1e-15) + (1 - target) * log(1 - pred + 1e-15);
             }

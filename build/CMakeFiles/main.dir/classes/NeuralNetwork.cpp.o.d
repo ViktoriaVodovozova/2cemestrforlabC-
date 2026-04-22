@@ -1,2 +1,2 @@
 CMakeFiles/main.dir/classes/NeuralNetwork.cpp.o: \
-  /Users/viktoriavodovozova/Documents/Lab1_/classes/NeuralNetwork.cpp
+  /Users/yowlxc/itmo/cpp/2cemestrforlabC-/classes/NeuralNetwork.cpp

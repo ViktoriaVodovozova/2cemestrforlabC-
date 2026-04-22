@@ -30,6 +30,7 @@ public:
 
     int getRows() const;         // вернуть количество строк
     int getCols() const;         // вернуть количество столбцов
+    Matrix submatrix(int startRow, int startCol, int numRows, int numCols) const;    // создание подматрицы
     Matrix transpose() const;    // транспонирование (строки ↔ столбцы)
     void fill(double value);     // заполнить всю матрицу значением
     void randomize(double min, double max);  // заполнить случайными числами

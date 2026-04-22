@@ -11,12 +11,12 @@ find_package(nlohmann_json CONFIG REQUIRED)
 
 add_executable(main
     main.cpp
-    get_points.cpp
+    utils/get_points.cpp
     classes/Point.cpp
     classes/Matrix.cpp
     classes/Dataset.cpp
     classes/NeuralNetwork.cpp
-        json_loader.cpp
+        utils/json_loader.cpp
 )
 
 # линкуем библиотеку
