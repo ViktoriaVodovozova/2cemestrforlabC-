@@ -64,6 +64,9 @@ Dataset get_points(int first_cl_size, int second_cl_size, float k, float b, std:
 
         dataset.addPoint(current);
     }
-    
+
+    // перемешка точек между собой, чтобы не было зависимости кластера от порядкового номера точки
+    std::vector<Point>& points = dataset.getPoints(); 
+    std::shuffle(points.begin(), points.end(), gen);
     return dataset;
 }

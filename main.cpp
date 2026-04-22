@@ -14,14 +14,14 @@ int main() {
     std::cout << "=== Генерация кластеров ===" << std::endl;
     
     // генерируем точки (по 100 в каждом кластере, идеальная прямая - y = -2x + 10)
-    Dataset data = get_points(200, 200, -2, 10, randomDouble);
+    Dataset data = get_points(500, 500, -2, 10, randomDouble);
     std::cout << "Сгенерировано " << data.size() << " точек" << std::endl;
     
     // Сохраняем в JSON
     std::ofstream fout("points.json");
     fout << "{\n    \"points\": [\n";
     for (int i = 0; i < data.size(); i++) {
-        Point p = data.getPoint(i);
+        Point p = data.getIndex(i);
         fout << "        {\"x\": " << p.x << ", \"y\": " << p.y << ", \"label\": " << p.label << "}";
         if (i < data.size() - 1) fout << ",";
         fout << "\n";
