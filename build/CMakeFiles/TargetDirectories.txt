@@ -1,0 +1,3 @@
+/Users/yowlxc/itmo/cpp/2cemestrforlabC-/build/CMakeFiles/main.dir
+/Users/yowlxc/itmo/cpp/2cemestrforlabC-/build/CMakeFiles/edit_cache.dir
+/Users/yowlxc/itmo/cpp/2cemestrforlabC-/build/CMakeFiles/rebuild_cache.dir

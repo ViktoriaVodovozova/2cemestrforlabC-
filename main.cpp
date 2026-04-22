@@ -3,56 +3,66 @@
 #include <cmath>
 #include "classes/Dataset.h"
 #include "classes/Matrix.h"
-#include "classes/Point.h"
-#include "get_points.h"
+#include "classes/NeuralNetwork.h"
+#include <nlohmann/json.hpp>
+#include "utils/get_points.h"
+std::pair<Matrix, Matrix> loadFromJSON(const std::string& filename);
 
-// функция для подсчета ошибки (сколько точек не на своих местах)
-double totalLoss(const Dataset& data, double k, double b) {
-    int errors = 0;
-    for (int i = 0; i < data.size(); i++) {
-        Point p = data.getPoint(i);
-        // предсказываем кластер по тому, выше или ниже точки прямой
-        double lineY = k * p.x + b;
-        int predictedCluster = (p.y > lineY) ? 1 : 0;
-        
-        if (predictedCluster != p.label) {
-            errors++;
-        }
-    }
-    return static_cast<double>(errors) / data.size(); // возвращаем долю ошибок
-}
+
 
 int main() {
     std::cout << "=== Генерация кластеров ===" << std::endl;
     
-    // генерируем точки (по 1000 в каждом кластере, идеальная прямая - y = -2x + 10)
-    Dataset data = get_points(1000, 1000, -2, 10);
+    // генерируем точки (по 100 в каждом кластере, идеальная прямая - y = -2x + 10)
+    Dataset data = get_points(500, 500, -2, 10, randomDouble);
     std::cout << "Сгенерировано " << data.size() << " точек" << std::endl;
-    
-    // Считаем total loss
-    double k, b;
-    std::cout << "Введите последовательно k и b для проверяемой прямой y = kx + b:" << std::endl << "k = ";
-    std::cin >> k;
-    std::cout << "b = ";
-    std::cin >> b;
-    double loss = totalLoss(data, k, b);
-    std::cout << "Прямая: y = " << k << "x + " << b << std::endl;
-    std::cout << "total loss: " << loss * 100 << "%" << std::endl;
     
     // Сохраняем в JSON
     std::ofstream fout("points.json");
     fout << "{\n    \"points\": [\n";
     for (int i = 0; i < data.size(); i++) {
-        Point p = data.getPoint(i);
+        Point p = data.getIndex(i);
         fout << "        {\"x\": " << p.x << ", \"y\": " << p.y << ", \"label\": " << p.label << "}";
         if (i < data.size() - 1) fout << ",";
         fout << "\n";
     }
     fout << "    ]\n}\n";
     fout.close();
-    
-    std::cout << "Данные сохранены в points.json" << std::endl;
-    std::cout << "Запустите python3 visualization.py для просмотра" << std::endl;
-    
+
+    std::cout << "=== Загрузка данных из JSON ===" << std::endl;
+
+    // загружаем из файла 
+    auto [X, y] = loadFromJSON("points.json");
+
+    if (X.getRows() == 0) {
+        std::cerr << "Не удалось загрузить данные. Выход." << std::endl;
+        return 1;
+    }
+    int train_size = X.getRows() * 0.8;
+    Matrix X_train = X.submatrix(0, 0, train_size, X.getCols());
+    Matrix y_train = y.submatrix(0, 0, train_size, y.getCols());
+    Matrix X_test = X.submatrix(train_size, 0, X.getRows() - train_size, X.getCols());
+    Matrix y_test = y.submatrix(train_size, 0, y.getRows() - train_size, y.getCols());
+
+    std::cout << "=== Обучение нейросети ===" << std::endl;
+    NeuralNetwork net(2, 0.1);              // 2 нейрона, lr=0.1
+    net.train(X_train, y_train, 500);       // 500 эпох
+
+    std::cout << "\n=== Результат ===" << std::endl;
+    std::cout << "Точность: " << net.accuracy(X_test, y_test) * 100 << "%" << std::endl;
+
+    // для визуализации результатов
+    std::ofstream line("line.txt");
+    double step = 0.05;
+    for (double x = -4; x <= 4; x += step) {
+        for (double y = -2.5; y <= 2.5; y += step) {
+            double prob = net.predictAt(x, y);
+            line << x << " " << y << " " << prob << std::endl;
+        }
+        line << std::endl;  
+    }
+    line.close();
+
     return 0;
 }
+

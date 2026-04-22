@@ -16,7 +16,8 @@ public:
 
     void addPoint(const Point& point);              // добавить точку
     void addPoint(double x, double y, int label);   // добавить точку по координатам
-    Point getPoint(int index) const;                // получить точку по индексу
+    Point getIndex(int index) const;                // получить точку по индексу
+    std::vector<Point>& getPoints();                // получить точки в виде вектора
     int size() const;                               // количество точек
     void clear();                                   // очистить все точки
 

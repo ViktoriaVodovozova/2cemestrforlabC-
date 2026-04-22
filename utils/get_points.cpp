@@ -1,7 +1,7 @@
 #include "get_points.h"
 #include <cmath>
 #include <random>
-#include "classes/Point.h"
+#include "../classes/Point.h"
 
 // статические переменные для генерации случайных чисел
 static std::random_device rd;
@@ -34,7 +34,7 @@ Dataset get_points(int first_cl_size, int second_cl_size, float k, float b, std:
         center2.label = 0;
     }
 
-    double radius = sqrt(pow((center1.x - center2.x), 2) + pow((center1.y - center2.y), 2)) * 0.5 * 0.9;
+    double radius = sqrt(pow((center1.x - center2.x), 2) + pow((center1.y - center2.y), 2)) * 0.7;
 
     // генерация точек первого кластера
     for(int i = 0; i < first_cl_size; ++i){
@@ -64,6 +64,9 @@ Dataset get_points(int first_cl_size, int second_cl_size, float k, float b, std:
 
         dataset.addPoint(current);
     }
-    
+
+    // перемешка точек между собой, чтобы не было зависимости кластера от порядкового номера точки
+    std::vector<Point>& points = dataset.getPoints(); 
+    std::shuffle(points.begin(), points.end(), gen);
     return dataset;
 }

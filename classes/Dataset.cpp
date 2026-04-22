@@ -1,5 +1,6 @@
 #include "Dataset.h"
 #include <iostream>
+#include <vector>
 
 Dataset::Dataset() {
     // пустой набор данных
@@ -15,13 +16,17 @@ void Dataset::addPoint(double x, double y, int label) {
     points.push_back(Point(x, y, label));
 }
 
-Point Dataset::getPoint(int index) const {
+Point Dataset::getIndex(int index) const {
     // проверка на выход за границы
     if (index < 0 || index >= points.size()) {
         std::cerr << "Ошибка: индекс точки вне диапазона!" << std::endl;
         return Point();
     }
     return points[index];
+}
+
+std::vector<Point>& Dataset::getPoints() { 
+    return points; 
 }
 
 int Dataset::size() const {

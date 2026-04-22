@@ -1,8 +1,8 @@
 #ifndef GET_POINTS_H
 #define GET_POINTS_H
 
-#include "classes/Dataset.h"
-#include <functional>
+#include <functional> 
+#include "../classes/Dataset.h"
 
 // объявления функций
 double randomDouble(double min, double max);
