@@ -160,6 +160,14 @@ public:
         return (double)correct / X.getRows();
     }
 
+    // сетка предсказаний
+    double predictAt(double x, double y) {
+        Matrix input(1, 2);
+        input.set(0, 0, x);
+        input.set(0, 1, y);
+        return forward(input).get(0, 0);
+    }
+
 private:
     // добавить столбец единиц (bias) к матрице
     Matrix addBias(const Matrix& m) {

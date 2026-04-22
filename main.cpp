@@ -45,11 +45,23 @@ int main() {
     Matrix y_test = y.submatrix(train_size, 0, y.getRows() - train_size, y.getCols());
 
     std::cout << "=== Обучение нейросети ===" << std::endl;
-    NeuralNetwork net(6, 0.1);              // 6 нейронов, lr=0.1
+    NeuralNetwork net(2, 0.1);              // 2 нейрона, lr=0.1
     net.train(X_train, y_train, 500);       // 500 эпох
 
     std::cout << "\n=== Результат ===" << std::endl;
     std::cout << "Точность: " << net.accuracy(X_test, y_test) * 100 << "%" << std::endl;
+
+    // для визуализации результатов
+    std::ofstream line("line.txt");
+    double step = 0.05;
+    for (double x = -4; x <= 4; x += step) {
+        for (double y = -2.5; y <= 2.5; y += step) {
+            double prob = net.predictAt(x, y);
+            line << x << " " << y << " " << prob << std::endl;
+        }
+        line << std::endl;  
+    }
+    line.close();
 
     return 0;
 }
