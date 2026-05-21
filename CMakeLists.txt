@@ -3,22 +3,20 @@ project(PointGeneration)
 
 set(CMAKE_CXX_STANDARD 17)
 
-# указываем путь к vcpkg 
-set(CMAKE_PREFIX_PATH "/Users/yowlxc/itmo/cpp/vcpkg/installed/arm64-osx" ${CMAKE_PREFIX_PATH})
-
-# находим библиотеку
+# Находим pybind11 и JSON
+find_package(pybind11 CONFIG REQUIRED)
 find_package(nlohmann_json CONFIG REQUIRED)
 
-add_executable(main
-    main.cpp
-    utils/get_points.cpp
-    classes/Point.cpp
-    classes/Matrix.cpp
-    classes/Dataset.cpp
-    classes/NeuralNetwork.cpp
+# Собираем Python-модуль (вместо executable)
+pybind11_add_module(anaconda_nn
+        classes/Matrix.cpp
+        classes/Point.cpp
+        classes/Dataset.cpp
+        classes/Layer.cpp
+        classes/NeuralNetwork.cpp
+        classes/pybind_wrapper.cpp   # ← этот файл создадим ниже
         utils/json_loader.cpp
 )
 
-# линкуем библиотеку
-target_link_libraries(main PRIVATE nlohmann_json::nlohmann_json)
-find_package(nlohmann_json CONFIG REQUIRED)
+# Линкуем JSON (если используется в NeuralNetwork)
+target_link_libraries(anaconda_nn PRIVATE nlohmann_json::nlohmann_json)

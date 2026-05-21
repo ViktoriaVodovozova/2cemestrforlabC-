@@ -1,1 +1,18 @@
 .idea/
+# Сборка
+build/
+cmake-build-debug/
+*.so
+*.pyd
+*.dylib
+
+# Данные и модели
+data/*.csv
+data/*.json
+models/
+
+# Python
+__pycache__/
+*.pyc
+*.log
+.venv/
