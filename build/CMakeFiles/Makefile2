@@ -63,11 +63,11 @@ CMAKE_BINARY_DIR = /Users/yowlxc/itmo/cpp/2cemestrforlabC-/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/main.dir/all
+all: CMakeFiles/anaconda_nn.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/main.dir/codegen
+codegen: CMakeFiles/anaconda_nn.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -75,40 +75,40 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/main.dir/clean
+clean: CMakeFiles/anaconda_nn.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/main.dir
+# Target rules for target CMakeFiles/anaconda_nn.dir
 
 # All Build rule for target.
-CMakeFiles/main.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/yowlxc/itmo/cpp/2cemestrforlabC-/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target main"
-.PHONY : CMakeFiles/main.dir/all
+CMakeFiles/anaconda_nn.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/yowlxc/itmo/cpp/2cemestrforlabC-/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target anaconda_nn"
+.PHONY : CMakeFiles/anaconda_nn.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/main.dir/rule: cmake_check_build_system
+CMakeFiles/anaconda_nn.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yowlxc/itmo/cpp/2cemestrforlabC-/build/CMakeFiles 8
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/anaconda_nn.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yowlxc/itmo/cpp/2cemestrforlabC-/build/CMakeFiles 0
-.PHONY : CMakeFiles/main.dir/rule
+.PHONY : CMakeFiles/anaconda_nn.dir/rule
 
 # Convenience name for target.
-main: CMakeFiles/main.dir/rule
-.PHONY : main
+anaconda_nn: CMakeFiles/anaconda_nn.dir/rule
+.PHONY : anaconda_nn
 
 # codegen rule for target.
-CMakeFiles/main.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/yowlxc/itmo/cpp/2cemestrforlabC-/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Finished codegen for target main"
-.PHONY : CMakeFiles/main.dir/codegen
+CMakeFiles/anaconda_nn.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/yowlxc/itmo/cpp/2cemestrforlabC-/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Finished codegen for target anaconda_nn"
+.PHONY : CMakeFiles/anaconda_nn.dir/codegen
 
 # clean rule for target.
-CMakeFiles/main.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
-.PHONY : CMakeFiles/main.dir/clean
+CMakeFiles/anaconda_nn.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/clean
+.PHONY : CMakeFiles/anaconda_nn.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

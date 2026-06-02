@@ -5,7 +5,7 @@
 
 namespace py = pybind11;
 
-//  Вспомогательная функция: конвертация numpy array -> Matrix
+//  вспомогательная функция: конвертация numpy array -> Matrix
 Matrix numpy_to_matrix(py::array_t<double> arr) {
     auto buf = arr.request();
     if (buf.ndim != 2) throw std::runtime_error("Ожидается 2D массив (NxM)");

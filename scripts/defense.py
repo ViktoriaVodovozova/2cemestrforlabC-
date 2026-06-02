@@ -6,6 +6,13 @@ from sklearn.metrics import f1_score
 import anaconda_nn
 import joblib
 import sys
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+BUILD = ROOT / "build"
+
+sys.path.insert(0, str(BUILD))
 
 def defense(weights_file, scaler_file, test_csv, epochs=5):
     """

@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named anaconda_nn
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
-.PHONY : main
+anaconda_nn: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 anaconda_nn
+.PHONY : anaconda_nn
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+anaconda_nn/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/build
+.PHONY : anaconda_nn/fast
 
 classes/Dataset.o: classes/Dataset.cpp.o
 .PHONY : classes/Dataset.o
 
 # target to build an object file
 classes/Dataset.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/classes/Dataset.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/classes/Dataset.cpp.o
 .PHONY : classes/Dataset.cpp.o
 
 classes/Dataset.i: classes/Dataset.cpp.i
@@ -142,7 +142,7 @@ classes/Dataset.i: classes/Dataset.cpp.i
 
 # target to preprocess a source file
 classes/Dataset.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/classes/Dataset.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/classes/Dataset.cpp.i
 .PHONY : classes/Dataset.cpp.i
 
 classes/Dataset.s: classes/Dataset.cpp.s
@@ -150,15 +150,39 @@ classes/Dataset.s: classes/Dataset.cpp.s
 
 # target to generate assembly for a file
 classes/Dataset.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/classes/Dataset.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/classes/Dataset.cpp.s
 .PHONY : classes/Dataset.cpp.s
+
+classes/Layer.o: classes/Layer.cpp.o
+.PHONY : classes/Layer.o
+
+# target to build an object file
+classes/Layer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/classes/Layer.cpp.o
+.PHONY : classes/Layer.cpp.o
+
+classes/Layer.i: classes/Layer.cpp.i
+.PHONY : classes/Layer.i
+
+# target to preprocess a source file
+classes/Layer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/classes/Layer.cpp.i
+.PHONY : classes/Layer.cpp.i
+
+classes/Layer.s: classes/Layer.cpp.s
+.PHONY : classes/Layer.s
+
+# target to generate assembly for a file
+classes/Layer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/classes/Layer.cpp.s
+.PHONY : classes/Layer.cpp.s
 
 classes/Matrix.o: classes/Matrix.cpp.o
 .PHONY : classes/Matrix.o
 
 # target to build an object file
 classes/Matrix.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/classes/Matrix.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/classes/Matrix.cpp.o
 .PHONY : classes/Matrix.cpp.o
 
 classes/Matrix.i: classes/Matrix.cpp.i
@@ -166,7 +190,7 @@ classes/Matrix.i: classes/Matrix.cpp.i
 
 # target to preprocess a source file
 classes/Matrix.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/classes/Matrix.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/classes/Matrix.cpp.i
 .PHONY : classes/Matrix.cpp.i
 
 classes/Matrix.s: classes/Matrix.cpp.s
@@ -174,7 +198,7 @@ classes/Matrix.s: classes/Matrix.cpp.s
 
 # target to generate assembly for a file
 classes/Matrix.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/classes/Matrix.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/classes/Matrix.cpp.s
 .PHONY : classes/Matrix.cpp.s
 
 classes/NeuralNetwork.o: classes/NeuralNetwork.cpp.o
@@ -182,7 +206,7 @@ classes/NeuralNetwork.o: classes/NeuralNetwork.cpp.o
 
 # target to build an object file
 classes/NeuralNetwork.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/classes/NeuralNetwork.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/classes/NeuralNetwork.cpp.o
 .PHONY : classes/NeuralNetwork.cpp.o
 
 classes/NeuralNetwork.i: classes/NeuralNetwork.cpp.i
@@ -190,7 +214,7 @@ classes/NeuralNetwork.i: classes/NeuralNetwork.cpp.i
 
 # target to preprocess a source file
 classes/NeuralNetwork.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/classes/NeuralNetwork.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/classes/NeuralNetwork.cpp.i
 .PHONY : classes/NeuralNetwork.cpp.i
 
 classes/NeuralNetwork.s: classes/NeuralNetwork.cpp.s
@@ -198,7 +222,7 @@ classes/NeuralNetwork.s: classes/NeuralNetwork.cpp.s
 
 # target to generate assembly for a file
 classes/NeuralNetwork.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/classes/NeuralNetwork.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/classes/NeuralNetwork.cpp.s
 .PHONY : classes/NeuralNetwork.cpp.s
 
 classes/Point.o: classes/Point.cpp.o
@@ -206,7 +230,7 @@ classes/Point.o: classes/Point.cpp.o
 
 # target to build an object file
 classes/Point.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/classes/Point.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/classes/Point.cpp.o
 .PHONY : classes/Point.cpp.o
 
 classes/Point.i: classes/Point.cpp.i
@@ -214,7 +238,7 @@ classes/Point.i: classes/Point.cpp.i
 
 # target to preprocess a source file
 classes/Point.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/classes/Point.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/classes/Point.cpp.i
 .PHONY : classes/Point.cpp.i
 
 classes/Point.s: classes/Point.cpp.s
@@ -222,63 +246,39 @@ classes/Point.s: classes/Point.cpp.s
 
 # target to generate assembly for a file
 classes/Point.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/classes/Point.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/classes/Point.cpp.s
 .PHONY : classes/Point.cpp.s
 
-main.o: main.cpp.o
-.PHONY : main.o
+classes/pybind_wrapper.o: classes/pybind_wrapper.cpp.o
+.PHONY : classes/pybind_wrapper.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
-.PHONY : main.cpp.o
+classes/pybind_wrapper.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/classes/pybind_wrapper.cpp.o
+.PHONY : classes/pybind_wrapper.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-utils/get_points.o: utils/get_points.cpp.o
-.PHONY : utils/get_points.o
-
-# target to build an object file
-utils/get_points.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/utils/get_points.cpp.o
-.PHONY : utils/get_points.cpp.o
-
-utils/get_points.i: utils/get_points.cpp.i
-.PHONY : utils/get_points.i
+classes/pybind_wrapper.i: classes/pybind_wrapper.cpp.i
+.PHONY : classes/pybind_wrapper.i
 
 # target to preprocess a source file
-utils/get_points.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/utils/get_points.cpp.i
-.PHONY : utils/get_points.cpp.i
+classes/pybind_wrapper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/classes/pybind_wrapper.cpp.i
+.PHONY : classes/pybind_wrapper.cpp.i
 
-utils/get_points.s: utils/get_points.cpp.s
-.PHONY : utils/get_points.s
+classes/pybind_wrapper.s: classes/pybind_wrapper.cpp.s
+.PHONY : classes/pybind_wrapper.s
 
 # target to generate assembly for a file
-utils/get_points.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/utils/get_points.cpp.s
-.PHONY : utils/get_points.cpp.s
+classes/pybind_wrapper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/classes/pybind_wrapper.cpp.s
+.PHONY : classes/pybind_wrapper.cpp.s
 
 utils/json_loader.o: utils/json_loader.cpp.o
 .PHONY : utils/json_loader.o
 
 # target to build an object file
 utils/json_loader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/utils/json_loader.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/utils/json_loader.cpp.o
 .PHONY : utils/json_loader.cpp.o
 
 utils/json_loader.i: utils/json_loader.cpp.i
@@ -286,7 +286,7 @@ utils/json_loader.i: utils/json_loader.cpp.i
 
 # target to preprocess a source file
 utils/json_loader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/utils/json_loader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/utils/json_loader.cpp.i
 .PHONY : utils/json_loader.cpp.i
 
 utils/json_loader.s: utils/json_loader.cpp.s
@@ -294,7 +294,7 @@ utils/json_loader.s: utils/json_loader.cpp.s
 
 # target to generate assembly for a file
 utils/json_loader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/utils/json_loader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/anaconda_nn.dir/build.make CMakeFiles/anaconda_nn.dir/utils/json_loader.cpp.s
 .PHONY : utils/json_loader.cpp.s
 
 # Help Target
@@ -305,10 +305,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... main"
+	@echo "... anaconda_nn"
 	@echo "... classes/Dataset.o"
 	@echo "... classes/Dataset.i"
 	@echo "... classes/Dataset.s"
+	@echo "... classes/Layer.o"
+	@echo "... classes/Layer.i"
+	@echo "... classes/Layer.s"
 	@echo "... classes/Matrix.o"
 	@echo "... classes/Matrix.i"
 	@echo "... classes/Matrix.s"
@@ -318,12 +321,9 @@ help:
 	@echo "... classes/Point.o"
 	@echo "... classes/Point.i"
 	@echo "... classes/Point.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... utils/get_points.o"
-	@echo "... utils/get_points.i"
-	@echo "... utils/get_points.s"
+	@echo "... classes/pybind_wrapper.o"
+	@echo "... classes/pybind_wrapper.i"
+	@echo "... classes/pybind_wrapper.s"
 	@echo "... utils/json_loader.o"
 	@echo "... utils/json_loader.i"
 	@echo "... utils/json_loader.s"
